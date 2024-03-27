@@ -1,0 +1,15 @@
+/** @format */
+
+.sortButton {
+  width: 177px;
+  height: 44px;
+  background-color: #cee542;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  color: #6000da;
+  border-radius: 14px;
+}
+.sortButton:hover {
+  background-color: #cee542 !important;
+}

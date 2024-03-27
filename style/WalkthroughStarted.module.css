@@ -1,0 +1,22 @@
+/** @format */
+
+.startedSection {
+  background: url(/images/StartedBg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 2rem;
+  height: 100vh;
+  overflow-x: hidden;
+  align-items: center;
+}
+.startedContainer {
+  width: 365px;
+  margin: auto;
+}
+.startedHeading {
+  margin-top: 15em;
+}
+.footerContainer {
+  margin-top: 10em;
+}

@@ -1,0 +1,33 @@
+/** @format */
+
+.parentOnboardingScreen {
+  max-width: 400px;
+  height: 741px;
+  margin: 4em auto;
+  padding: 2em;
+  color: white !important;
+  font-family: "DM Sans", sans-serif !important;
+}
+.sortHeading {
+  margin-top: 8em;
+  margin-bottom: 1em;
+}
+.listsPara {
+  font-size: 2em;
+}
+.continuePara {
+  text-align: center;
+  margin: 1em 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.icon {
+  cursor: pointer;
+}
+.iconContainer {
+  width: 126px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}

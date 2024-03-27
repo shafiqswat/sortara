@@ -1,0 +1,24 @@
+/** @format */
+
+.cardContent {
+  display: flex;
+}
+.trendyContainer {
+  width: 360px;
+  margin: auto;
+  font-family: "DM Sans", sans-serif !important;
+}
+.suggested {
+  border-radius: 4px;
+}
+.trendyPara {
+  color: #101036;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.44px;
+  margin: 0;
+}
+.suggestPara {
+  line-height: 20.83px;
+  margin: 0;
+}

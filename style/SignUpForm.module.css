@@ -1,0 +1,51 @@
+/** @format */
+@font-face {
+  font-family: "Recoleta";
+  src: url("../public/assets/Fonts/Recoleta-RegularDEMO.ttf") format("opentype");
+}
+.signUpForm {
+  width: 441px;
+  border: 1px solid #d0d0d0;
+  border-radius: 14px;
+  padding: 3em;
+  margin: auto;
+  font-family: "DM Sans", sans-serif !important;
+}
+.headingText {
+  font-family: "Recoleta" !important;
+  font-weight: 900;
+  font-size: 28px;
+  color: #161c20;
+}
+
+.inputRow {
+  width: 100%;
+  display: flex;
+}
+#firstName,
+#lastName {
+  width: 95%;
+}
+.fullWidth {
+  width: 100%;
+  border-radius: 4px;
+  height: 48px;
+  border: 1px solid #d9d9d9;
+}
+.label {
+  font-size: 18px;
+}
+.fullWidth::placeholder {
+  color: #595959;
+  font-family: "DM Sans", sans-serif;
+}
+.fullWidth:focus {
+  border: 2px solid #6000da;
+  outline: #6000da;
+}
+.checkbox span a {
+  font-family: "DM Sans", sans-serif !important;
+  color: #161c20 !important;
+  font-size: 14px;
+  font-weight: 500;
+}

@@ -1,0 +1,30 @@
+/** @format */
+.addItemInput {
+  border-radius: 27px;
+  width: 240px;
+  height: 50px;
+  margin-bottom: 0.5em;
+}
+
+.addItemContainer {
+  width: 360px;
+  margin: auto;
+}
+.buttonContainer {
+  margin-top: 11em;
+}
+.customImage {
+  display: block;
+  cursor: pointer;
+}
+.uploadFile {
+  border-radius: 27px !important;
+  width: 240px;
+  height: 50px;
+  text-align: left !important;
+  color: #6000da;
+  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  margin-bottom: 0.5em;
+}

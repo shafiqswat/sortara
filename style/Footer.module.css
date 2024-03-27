@@ -1,0 +1,18 @@
+/** @format */
+.menu {
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu a {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}

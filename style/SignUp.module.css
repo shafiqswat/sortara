@@ -1,0 +1,11 @@
+/** @format */
+
+.signUpSection {
+  background-color: #f2f2f7;
+  max-width: 100%;
+  height: auto;
+  overflow-x: hidden;
+}
+.logoParent {
+  text-align: center;
+}
