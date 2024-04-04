@@ -1,0 +1,27 @@
+/** @format */
+.fullWidth {
+  width: 100%;
+  border-radius: 4px;
+  height: 48px;
+  border: 1px solid #d9d9d9;
+  color: #595959;
+  font-family: "DM Sans", sans-serif !important;
+  font-weight: 700 !important;
+}
+.fullWidth:focus,
+.fullWidth:hover {
+  border: 1px solid #d9d9d9;
+}
+.accountPara {
+  font-size: 18px;
+  font-weight: 700;
+}
+#continuePara {
+  font-size: 16px;
+  font-weight: 400;
+}
+#forgotPara {
+  color: #161c20;
+  font-weight: 500;
+  font-size: 14px;
+}

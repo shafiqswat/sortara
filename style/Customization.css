@@ -1,11 +1,14 @@
 /** @format */
-.ant-form-item-explain-error,
+.signUpFormContainer .ant-form-item-explain-error,
 .invalidPhoneNumber {
   text-align-last: right !important;
   color: #6000da !important;
   font-family: "DM Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
+}
+.signInFormContainer .ant-form-item-explain-error {
+  display: none !important;
 }
 .invalidPhoneNumber {
   position: inherit;
@@ -24,17 +27,21 @@
   border-radius: 50% !important;
   border: 1px solid black !important;
   background-color: transparent !important;
-  position: relative; /* Ensure position is relative for absolute positioning of ::after */
+  position: relative !important;
 }
 
 .ant-checkbox-inner::after {
   content: "";
+  position: absolute !important;
   width: 10px !important;
   height: 10px !important;
   background-color: black !important;
   border-radius: 50% !important;
-  transform: translate(-2px, -5px) !important;
+  transform: translate(-50%, -60%) !important;
+  top: 55% !important;
+  left: 50% !important;
 }
+
 .ant-checkbox .ant-checkbox-inner:after {
   border: 0 !important;
 }
@@ -42,15 +49,20 @@
   content: "";
 }
 .ant-collapse-header {
-  font-family: "DM Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-family: "DM Sans" !important;
   font-weight: 700;
   font-size: 20px;
   line-height: 26.04px;
+  padding-top: 0.2em !important;
+  padding-bottom: 0 !important;
 }
+
 .ant-collapse-expand-icon {
   position: absolute;
   right: 0;
-  top: 30%;
+  top: 20%;
   color: #6000da !important;
 }
 .anticon {
@@ -83,4 +95,10 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .addItemInputs .ant-input {
   padding: 10px !important;
+}
+.sortListInputContainer .ant-input::placeholder {
+  color: #595959;
+  font-size: 16px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
 }

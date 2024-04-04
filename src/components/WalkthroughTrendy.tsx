@@ -16,7 +16,6 @@ interface Props {
 }
 
 const WalkthroughTrendy: React.FC<Props> = ({ onNextStep }) => {
-  // Rest of the component code...
   const handleNextStep = () => {
     onNextStep("share");
   };

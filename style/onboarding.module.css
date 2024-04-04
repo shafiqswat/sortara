@@ -23,6 +23,8 @@
 }
 .icon {
   cursor: pointer;
+  margin-right: 20px;
+  text-align: center;
 }
 .iconContainer {
   width: 126px;
@@ -30,4 +32,9 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+}
+.iconPara {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
 }

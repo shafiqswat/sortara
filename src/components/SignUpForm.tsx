@@ -2,10 +2,12 @@
 "use client";
 import React, { useState } from "react";
 import style from "../../style/SignUpForm.module.css";
+import globalStyle from "../../style/global.module.css";
 import { Form, FormProps, Input, Checkbox } from "antd";
 import SignUpValidationButton from "./SignUpValidationButton";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import SignUpFormHeading from "./SignUpFormHeading";
 
 interface FieldType {
   firstName?: string;
@@ -45,16 +47,17 @@ const SignUpForm: React.FC = () => {
   const handleClick = () => {};
   return (
     <Form
-      className={style.signUpForm}
+      className={globalStyle.signUpForm}
       name='basic'
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       autoComplete='off'>
-      <h2 className={style.headingText}>Create your account</h2>
-      <label className={style.label}>Name</label>
+      <SignUpFormHeading headingText='Create your account' />
+      <label className={globalStyle.label}>Name</label>
 
       <div className={style.inputRow}>
+        <div className={style.signUpFormContainer}></div>
         <Form.Item<FieldType> name='firstName'>
           <Input
             type='text'

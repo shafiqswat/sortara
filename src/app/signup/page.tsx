@@ -6,8 +6,8 @@ import Footer from "@/components/Footer";
 
 export default function SignUp() {
   return (
-    <section className={style.signUpSection}>
-      <div className={style.logoParent}>
+    <section className={GlobalStyle.signUpSection}>
+      <div className='text-center'>
         <img
           src='/images/signUpLogo.svg'
           alt='signUpLogo'
@@ -15,7 +15,7 @@ export default function SignUp() {
         />
       </div>
       <SignUpForm />
-      <div className={GlobalStyle.footerContainer}>
+      <div className='my-5'>
         <Footer linkColor='#595959' />
       </div>
     </section>

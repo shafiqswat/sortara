@@ -1,0 +1,16 @@
+/** @format */
+.fullWidth {
+  width: 100%;
+  border-radius: 4px;
+  height: 48px;
+  /* border: 1px solid #d9d9d9; */
+  color: #595959;
+  font-family: "DM Sans", sans-serif !important;
+  font-weight: 700 !important;
+}
+#forgotPara {
+  color: #161c20;
+  font-size: 14px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+}

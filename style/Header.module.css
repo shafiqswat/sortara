@@ -1,0 +1,18 @@
+/** @format */
+#linkContainer a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  display: block;
+  background-color: #6000da;
+  border-radius: 50%;
+}
+
+#linkContainer a {
+  position: relative;
+  margin-left: 3rem;
+}

@@ -14,7 +14,7 @@ export default function SignUpSocialMediaIcon({
         src={iconPath}
         alt='google'
       />
-      <p>{iconText}</p>
+      <p className={style.iconPara}>{iconText}</p>
     </div>
   );
 }

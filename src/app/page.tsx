@@ -1,10 +1,13 @@
 /** @format */
+"use client";
+
 import style from "../../style/global.module.css";
 import onboardingStyle from "../../style/onboarding.module.css";
 import SignUpValidationButton from "@/components/SignUpValidationButton";
 import SignUpSocialMediaIcon from "@/components/SignUpSocialMediaIcon";
 import Footer from "@/components/Footer";
 export default function Onboarding() {
+  const handleClick = () => {};
   return (
     <section className={style.onboardingBackground}>
       <div className={onboardingStyle.parentOnboardingScreen}>
@@ -23,12 +26,14 @@ export default function Onboarding() {
           color='#101036'
           backgroundColor='#CEE542'
           border='2px solid #101036'
+          onClick={handleClick}
         />
         <SignUpValidationButton
           ButtonText='Sign-in'
           color='white'
           backgroundColor='#6000DA'
           border='2px solid white'
+          onClick={handleClick}
         />
         <p className={onboardingStyle.continuePara}>or continue with</p>
         <div className={onboardingStyle.iconContainer}>

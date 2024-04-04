@@ -1,0 +1,14 @@
+/** @format */
+
+.sortListInput {
+  height: 44px;
+  width: 80%;
+  border-radius: 41px;
+}
+
+.askPara {
+  color: #6000da;
+  font-size: 14px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+}

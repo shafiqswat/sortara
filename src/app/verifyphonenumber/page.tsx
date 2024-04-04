@@ -9,7 +9,7 @@ import SignUpValidationButton from "@/components/SignUpValidationButton";
 import { useState, useEffect } from "react";
 import SignUpFormHeading from "@/components/SignUpFormHeading";
 
-const ConfirmPhoneNumber: React.FC = () => {
+const VerifyPhoneNumber: React.FC = () => {
   const [showResendLink, setShowResendLink] = useState(true);
   const [passwordError, setPasswordError] = useState(false);
   const [inputValue, setInputValue] = useState("");
@@ -67,21 +67,18 @@ const ConfirmPhoneNumber: React.FC = () => {
         initialValues={{ remember: true }}
         autoComplete='off'
         onFinish={handleSubmit}>
-        <SignUpFormHeading headingText='Confirm phone number' />
+        <SignUpFormHeading headingText='Phone Verification' />
         <p className={style.codePara}>
           Enter 6 digit code sent to +1 ***-***-1234
         </p>
         {passwordError && (
           <p className={style.error}>
-            The code you entered seems to be a bit off. Mind giving it another
-            go?
+            Invalid code, please try again or resend code
           </p>
         )}
         {attemptCount >= MAX_ATTEMPTS && (
           <p className={style.error}>
-            Looks like the code has taken a bit of a time-out. No worries,
-            though! Let's get you a fresh one – just request a new code with the
-            below button and we'll be right on it.
+            Code expired. Please use the Resend Code link to get a new code.
           </p>
         )}
         <Input
@@ -127,4 +124,4 @@ const ConfirmPhoneNumber: React.FC = () => {
   );
 };
 
-export default ConfirmPhoneNumber;
+export default VerifyPhoneNumber;
