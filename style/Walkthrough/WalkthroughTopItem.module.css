@@ -1,0 +1,23 @@
+/** @format */
+@font-face {
+  font-family: "Recoleta";
+  src: url("../../public/assets/Fonts/Recoleta-RegularDEMO.ttf")
+    format("opentype");
+}
+.walkthroughTopItemContainer {
+  margin-top: 6.5em;
+  color: white;
+}
+.walkthroughHeading {
+  font-family: "Recoleta", sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  margin-top: 1em;
+  line-height: 38.08px;
+}
+.flexibilityPara {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.83px;
+}

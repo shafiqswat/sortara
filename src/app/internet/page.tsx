@@ -1,5 +1,9 @@
 /** @format */
-
+import style from "../../../style/Pages/Internet.module.css";
 export default function Internet() {
-  return <></>;
+  return (
+    <>
+      <div className={style.internetContainer}></div>
+    </>
+  );
 }

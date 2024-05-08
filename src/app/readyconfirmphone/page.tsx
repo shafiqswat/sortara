@@ -1,6 +1,6 @@
 /** @format */
 import Footer from "@/components/Footer";
-import style from "../../../style/readyConfirmPhone.module.css";
+import style from "../../../style/Pages/readyConfirmPhone.module.css";
 export default function readyConfirmPhone() {
   return (
     <div className={style.onboardingBackground}>

@@ -1,0 +1,22 @@
+/** @format */
+
+.messageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cee542;
+  width: 393px;
+  height: 56px;
+  border-radius: 4px;
+  padding: 0 0.6em;
+}
+.askPara {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+}
+.askSpanText {
+  color: #6000da;
+  cursor: pointer;
+}

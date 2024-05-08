@@ -1,0 +1,33 @@
+/** @format */
+
+.iconContainer {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.ratePara {
+  color: #101036;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+}
+.iconContainer img {
+  cursor: pointer;
+}
+.cancelBtn {
+  color: #6000da;
+  width: 130px;
+  height: 44px;
+  border-radius: 14px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "DM Sans", sans-serif;
+  margin-right: 1em;
+}
+#acceptBtn {
+  color: #ffffff;
+  background-color: #6000da;
+  width: 200px;
+}

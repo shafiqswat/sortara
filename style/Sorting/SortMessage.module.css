@@ -1,0 +1,24 @@
+/** @format */
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+.messagePara {
+  width: 250px;
+  text-align: left;
+  color: #101036;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+}
+.confirmBtn {
+  font-family: "DM Sans", sans-serif;
+  color: #6000da;
+  margin-right: 1.5em;
+  background-color: #cee542;
+  border: 0;
+}
+.exitImage {
+  cursor: pointer;
+}

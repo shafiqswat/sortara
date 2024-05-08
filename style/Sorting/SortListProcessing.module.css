@@ -1,0 +1,16 @@
+/** @format */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container img {
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+.heading {
+  margin-right: 0.7em;
+  font-weight: 700;
+  font-size: 20px;
+  font-family: "DM Sans", sans-serif;
+}

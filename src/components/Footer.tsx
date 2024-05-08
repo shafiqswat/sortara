@@ -1,6 +1,6 @@
 /** @format */
 
-import style from "../../style/footer.module.css";
+import style from "../../style/Common/Footer.module.css";
 
 interface FooterProps {
   linkColor: string;

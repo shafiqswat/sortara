@@ -2,7 +2,7 @@
 "use client";
 // components/Header.tsx
 import { Container, Nav, Navbar } from "react-bootstrap";
-import style from "../../style/Header.module.css";
+import style from "../../style/Common/Header.module.css";
 import Link from "next/link";
 
 interface HeaderProps {

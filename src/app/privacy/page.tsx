@@ -1,6 +1,6 @@
 /** @format */
-import SignUpValidationButton from "@/components/SignUpValidationButton";
-import style from "../../../style/privacy.module.css";
+import SignUpValidationButton from "@/components/SignUp/SignUpValidationButton";
+import style from "../../../style/Pages/privacy.module.css";
 export default function Privacy() {
   return (
     <section className={style.privacySection}>

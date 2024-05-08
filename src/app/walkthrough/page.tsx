@@ -1,13 +1,13 @@
 /** @format */
 "use client";
 import React, { useState } from "react";
-import WalkthroughTrendy from "@/components/WalkthroughTrendy";
-import globalStyle from "../../../style/global.module.css";
-import style from "../../../style/Walkthrough.module.css";
-import WalkthroughAsk from "@/components/WalkthrouhAsk";
-import WalkthroughShare from "@/components/WalkthroughShare";
-import WalkthroughAddItem from "@/components/WalkthroughAddItem";
-import WalkthroughStarted from "@/components/WalkthroughStarted";
+import WalkthroughTrendy from "@/components/Walkthrough/WalkthroughTrendy";
+import globalStyle from "../../../style/Common/global.module.css";
+// import style from "../../../style/Walkthrough.module.css";
+import WalkthroughAsk from "@/components/Walkthrough/WalkthrouhAsk";
+import WalkthroughShare from "@/components/Walkthrough/WalkthroughShare";
+import WalkthroughAddItem from "@/components/Walkthrough/WalkthroughAddItem";
+import WalkthroughStarted from "@/components/Walkthrough/WalkthroughStarted";
 
 type CurrentStep = "ask" | "trendy" | "share" | "add" | "start";
 

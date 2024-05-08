@@ -1,0 +1,60 @@
+/** @format */
+
+.container {
+  background-color: #f2f2f7;
+  height: auto;
+}
+.contentContainer {
+  position: relative;
+  width: 380px;
+  margin: auto;
+}
+.buttonsContainer,
+.inputContainer {
+  margin-top: 15em;
+  padding-bottom: 2em;
+}
+.generateBtn {
+  position: absolute;
+  left: 2em;
+  top: 21em;
+  background-color: #ffffff;
+  color: #6000da;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  width: 291px;
+  height: 74px;
+  border-radius: 14px;
+}
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.changeBtn {
+  width: 363px;
+  height: 44px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.83px;
+  color: white;
+  background-color: #2f67fa;
+  font-family: "DM Sans" sans-serif;
+  margin-top: 15em;
+}
+.reviewContainer {
+  margin-top: 10em;
+  padding-bottom: 2em;
+}
+.tryParaContainer {
+  padding: 0 1.3em;
+  display: flex;
+  justify-content: space-between;
+}
+.tryParaContainer p {
+  color: #6000da;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+}

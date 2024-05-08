@@ -2,11 +2,11 @@
 "use client";
 import React from "react";
 import Footer from "@/components/Footer";
-import style from "../../../style/confirmphonenumber.module.css";
-import globalStyle from "../../../style/global.module.css";
+import style from "../../../style/Pages/confirmphonenumber.module.css";
+import globalStyle from "../../../style/Common/global.module.css";
 import { Form, Input } from "antd";
-import SignUpValidationButton from "@/components/SignUpValidationButton";
-import SignUpFormHeading from "@/components/SignUpFormHeading";
+import SignUpValidationButton from "@/components/SignUp/SignUpValidationButton";
+import SignUpFormHeading from "@/components/SignUp/SignUpFormHeading";
 
 const ForgotPassword: React.FC = () => {
   const handleSubmit = () => {

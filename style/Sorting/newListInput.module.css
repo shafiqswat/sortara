@@ -1,0 +1,31 @@
+/** @format */
+
+.input {
+  padding: 18px, 20px, 18px, 20px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  height: 42px;
+}
+.input::placeholder {
+  color: #595959 !important;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+}
+.input:focus {
+  border: 2px solid #6000da;
+}
+.label {
+  font-family: "DM Sans", sans-serif;
+  color: #101036;
+  font-weight: 700;
+  font-size: 20px;
+}
+.characterPara {
+  font-size: 14px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+}

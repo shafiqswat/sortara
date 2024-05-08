@@ -1,0 +1,35 @@
+/** @format */
+@font-face {
+  font-family: "Recoleta";
+  src: url(../../public/assets/Fonts/Recoleta-RegularDEMO.ttf);
+}
+.privacyHeading {
+  font-size: 28px;
+  font-family: "Recoleta", sans-serif;
+  font-weight: 900;
+}
+.pubHeading {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+}
+.label {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+}
+.indicator {
+  margin-top: -1.5em;
+  text-align: center;
+}
+.indicator img {
+  cursor: pointer;
+}
+.saveBtn {
+  color: white;
+  background-color: #6000da;
+  width: 336px;
+  height: 48px;
+  border-radius: 14px;
+  margin-top: 7em;
+}

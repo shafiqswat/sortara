@@ -1,9 +1,9 @@
 /** @format */
 "use client";
 import { ResetNewPassword } from "@/components/ResetNewPassword";
-import globalStyle from "../../../style/global.module.css";
+import globalStyle from "../../../style/Common/global.module.css";
 import Footer from "@/components/Footer";
-import SignInNewPassword from "@/components/SignInNewPassword";
+// import SignInNewPassword from "@/components/SignIn/SignInNewPassword";
 import { useState } from "react";
 
 const ResetPassword: React.FC = () => {

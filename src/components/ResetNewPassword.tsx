@@ -1,11 +1,11 @@
 /** @format */
 import React, { useState } from "react";
-import globalStyle from "../../style/global.module.css";
-import style from "../../style/confirmphonenumber.module.css";
+import globalStyle from "../../style/Common/global.module.css";
+import style from "../../style/Pages/confirmphonenumber.module.css";
 import { Form, Input } from "antd";
-import SignUpValidationButton from "@/components/SignUpValidationButton";
-import SignUpFormHeading from "@/components/SignUpFormHeading";
-import SignInNewPassword from "@/components/SignInNewPassword";
+import SignUpValidationButton from "@/components/SignUp/SignUpValidationButton";
+import SignUpFormHeading from "@/components/SignUp/SignUpFormHeading";
+import SignInNewPassword from "@/components/SignIn/SignInNewPassword";
 
 export const ResetNewPassword: React.FC = () => {
   const [error, setError] = useState<string | null>(null);

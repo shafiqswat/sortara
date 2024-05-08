@@ -1,0 +1,37 @@
+/** @format */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2em;
+  width: 335px;
+  height: 93px;
+  padding: 10px;
+  border-radius: 4px;
+}
+.userParent {
+  display: flex;
+  align-items: flex-start;
+}
+.username {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+}
+.userPara {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+}
+.userImage {
+  margin-right: 2em;
+  cursor: pointer;
+}
+.iconPath {
+  cursor: pointer;
+}
+.clickedContainer {
+  background-color: #f2f2f7;
+}

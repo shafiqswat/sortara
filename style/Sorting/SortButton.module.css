@@ -1,0 +1,10 @@
+/** @format */
+
+.sortButton {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 14px;
+  height: 38px;
+  color: #6000da;
+}

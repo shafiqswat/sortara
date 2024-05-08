@@ -2,12 +2,12 @@
 "use client";
 import React from "react";
 import Footer from "@/components/Footer";
-import style from "../../../style/confirmphonenumber.module.css";
-import globalStyle from "../../../style/global.module.css";
+import style from "../../../style/Pages/confirmphonenumber.module.css";
+import globalStyle from "../../../style/Common/global.module.css";
 import { Form, Input } from "antd";
-import SignUpValidationButton from "@/components/SignUpValidationButton";
+import SignUpValidationButton from "@/components/SignUp/SignUpValidationButton";
 import { useState, useEffect } from "react";
-import SignUpFormHeading from "@/components/SignUpFormHeading";
+import SignUpFormHeading from "@/components/SignUp/SignUpFormHeading";
 
 const ConfirmPhoneNumber: React.FC = () => {
   const [showResendLink, setShowResendLink] = useState(true);

@@ -1,0 +1,28 @@
+/** @format */
+.usernameInput {
+  border: none;
+}
+.drawer {
+  position: relative;
+}
+.usernameInput::placeholder {
+  color: #595959;
+  font-size: 16px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  padding-left: 40px;
+}
+.indicator {
+  position: absolute;
+  top: 5px;
+  left: 40%;
+}
+.indicator img {
+  cursor: pointer;
+}
+.currentHeading {
+  font-size: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  margin-top: 1em;
+}

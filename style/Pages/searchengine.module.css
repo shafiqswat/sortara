@@ -1,0 +1,66 @@
+/** @format */
+@font-face {
+  font-family: "Recoleta";
+  src: url(../../public/assets//Fonts/Recoleta-RegularDEMO.ttf)
+    format("opentype");
+}
+.container {
+  background-color: #f2f2f7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.exitPara {
+  color: #6000da;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  padding-top: 3em;
+  text-align: center;
+}
+
+.generatingPara {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.whiteMessageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cee542;
+  width: 393px;
+  height: 56px;
+  border-radius: 4px;
+}
+.messageContainer {
+  padding: 0 0.7em;
+}
+.whiteMessageContainer {
+  background-color: #ffffff;
+}
+.inputContainer {
+  /* margin: 6em auto 1.5em; */
+  width: 470px;
+}
+.celebHeading {
+  font-weight: 900;
+  margin-top: 1em;
+  line-height: 38.08px;
+  font-size: 28px;
+  font-family: "Recoleta", sans-serif;
+}
+.tryPara {
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  color: #6000da;
+  font-size: 14px;
+  font-weight: 500;
+}
+.collapseContainer {
+  width: 363px;
+}

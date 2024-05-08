@@ -1,7 +1,7 @@
 /** @format */
-import SignUpForm from "@/components/SignUpForm";
-import style from "../../../style/SignUp.module.css";
-import GlobalStyle from "../../../style/global.module.css";
+import SignUpForm from "@/components/SignUp/SignUpForm";
+// import style from "../../../style/SignUp.module.css";
+import GlobalStyle from "../../../style/Common/global.module.css";
 import Footer from "@/components/Footer";
 
 export default function SignUp() {

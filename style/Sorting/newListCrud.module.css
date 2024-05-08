@@ -1,0 +1,29 @@
+/** @format */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2em;
+}
+.editPara {
+  font-size: 14;
+  font-weight: 500;
+  color: #595959;
+  font-family: "DM Sans", sans-serif;
+}
+.privacyHeading {
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+.editIcon {
+  cursor: pointer;
+}
+.public {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  background-color: #cee542;
+  margin-left: 0.3em;
+}

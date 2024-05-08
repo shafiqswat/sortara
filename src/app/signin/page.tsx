@@ -1,7 +1,7 @@
 /** @format */
 "use client";
-import SignInForm from "@/components/SignInForm";
-import globalStyle from "../../../style/global.module.css";
+import SignInForm from "@/components/SignIn/SignInForm";
+import globalStyle from "../../../style/Common/global.module.css";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 

@@ -1,10 +1,9 @@
 /** @format */
 "use client";
-
-import style from "../../style/global.module.css";
-import onboardingStyle from "../../style/onboarding.module.css";
-import SignUpValidationButton from "@/components/SignUpValidationButton";
-import SignUpSocialMediaIcon from "@/components/SignUpSocialMediaIcon";
+import style from "../../style/Common/global.module.css";
+import onboardingStyle from "../../style/Pages/onboarding.module.css";
+import SignUpValidationButton from "@/components/SignUp/SignUpValidationButton";
+import SignUpSocialMediaIcon from "@/components/SignUp/SignUpSocialMediaIcon";
 import Footer from "@/components/Footer";
 export default function Onboarding() {
   const handleClick = () => {};
