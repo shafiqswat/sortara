@@ -1,38 +1,29 @@
 /** @format */
-
-// Collaborators.tsx
-
 import React, { useState } from "react";
 import style from "../../../style/Sorting/Collaborators.module.css";
 
 interface Props {
   item: {
+    id: number;
     imagePath: string;
     name: string;
     username: string;
     iconPath: string;
   };
-  onClickIcon: () => void;
+  onClickIcon: (item: any, actionType: string) => void;
 }
 
 const Collaborators: React.FC<Props> = ({ item, onClickIcon }) => {
-  const [iconPath, setIconPath] = useState(item.iconPath);
   const [isAdded, setIsAdded] = useState(false);
-  const handleIconClick = () => {
-    if (!isAdded) {
-      setIconPath("/images/newListCross.svg");
-      setIsAdded(true);
-    } else {
-      setIconPath("/images/ControlPoint.svg");
-      setIsAdded(false);
-    }
-    onClickIcon();
+
+  const handleIconClick = (actionType: string) => {
+    setIsAdded(!isAdded);
+    onClickIcon(item, actionType);
   };
 
   return (
     <div
-      className={`${style.container} ${isAdded ? style.clickedContainer : ""}`}
-      onClick={handleIconClick}>
+      className={`${style.container} ${isAdded ? style.clickedContainer : ""}`}>
       <div className={style.userParent}>
         <img
           src={item.imagePath}
@@ -45,10 +36,10 @@ const Collaborators: React.FC<Props> = ({ item, onClickIcon }) => {
         </div>
       </div>
       <img
-        src={iconPath}
+        src={isAdded ? "/images/newListCross.svg" : "/images/ControlPoint.svg"}
         className={style.iconPath}
         alt='icon'
-        onClick={handleIconClick}
+        onClick={() => handleIconClick(isAdded ? "remove" : "add")}
       />
     </div>
   );

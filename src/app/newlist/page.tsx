@@ -3,18 +3,29 @@
 "use client";
 import NewListInput from "@/components/Sorting/newListInput";
 import style from "../../../style/Pages/newList.module.css";
+import collaboratorStyle from "../../../style/Sorting/Collaborators.module.css";
 import { useRouter } from "next/navigation";
 import NewListCrud from "@/components/Sorting/newListCrud";
 import BottomSheetDrawer from "@/components/Sorting/bottomSheet";
 import { Button, Form } from "antd";
 import { useState } from "react";
 import BottomSheetCollaborators from "@/components/Sorting/bottomSheetCollaborators";
-
 export default function NewList() {
   const [selectedPrivacy, setSelectedPrivacy] = useState<string>("");
+  const [selectedCollaborators, setSelectedCollaborators] = useState<any[]>([]);
   const [showSpan, setShowSpan] = useState<string>("");
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const handleAddCollaborator = (collaborator: any) => {
+    setSelectedCollaborators([...selectedCollaborators, collaborator]);
+  };
+
+  const handleRemoveCollaborator = (collaborator: any) => {
+    setSelectedCollaborators(
+      selectedCollaborators.filter((c) => c.id !== collaborator.id)
+    );
+  };
   const handleDrawerClose = () => {
     setDrawerOpen(false);
   };
@@ -83,12 +94,33 @@ export default function NewList() {
             alt='add icon'
             handleEditClick={() => setOpen(true)}
           />
-          <div>{/* <h1>Collaborators</h1> */}</div>
+          {selectedCollaborators.map((collaborator, index) => (
+            <div
+              key={index}
+              className='d-flex justify-content-between align-items-center'>
+              <div className={collaboratorStyle.userParent}>
+                <img
+                  src={collaborator.imagePath}
+                  alt={`Collaborator ${index}`}
+                />
+                <div className='ms-3'>
+                  <h2 className={collaboratorStyle.username}>
+                    {collaborator.name}
+                  </h2>
+                  <p className={collaboratorStyle.userPara}>
+                    {collaborator.username}
+                  </p>
+                </div>
+              </div>
+              <p className={style.EditPara}>Edit permissions</p>
+            </div>
+          ))}
           <NewListCrud
             headingText='Nested List'
             paraText='Embed a nested list inside of this list'
             iconPath='images/crudAdd.svg'
-            alt='add icon'
+            alt='editIcon'
+            handleEditClick={() => setDrawerOpen(true)}
           />
           <div className={style.btnContainer}>
             <Button
@@ -108,6 +140,10 @@ export default function NewList() {
         <BottomSheetCollaborators
           handleClose={() => setOpen(false)}
           open={open}
+          handleSaveClose={() => setOpen(false)}
+          onAddCollaborator={handleAddCollaborator}
+          onRemoveCollaborator={handleRemoveCollaborator}
+          selectedCollaborators={selectedCollaborators}
         />
       </div>
     </div>

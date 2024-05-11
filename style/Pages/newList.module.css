@@ -4,7 +4,6 @@
   src: url(../../public/assets/Fonts//Recoleta-RegularDEMO.ttf);
 }
 .container {
-  height: 100vh;
   background-color: #f2f2f7;
 }
 .contentContainer {
@@ -36,9 +35,15 @@
   height: 48px;
   border-radius: 14px;
   margin-top: 5em;
-  position: relative;
-  z-index: 999;
+  margin-bottom: 2.5em;
 }
 .btnContainer {
   padding: 0.5em;
+}
+.EditPara {
+  font-size: 16px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  color: #6000da;
+  cursor: pointer;
 }

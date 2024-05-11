@@ -1,7 +1,6 @@
 /** @format */
-
 import React, { useState } from "react";
-import { Button, Drawer, Input, Form } from "antd";
+import { Drawer, Input, Form, Button } from "antd";
 import Collaborators from "./Collaborators";
 import initialUsers from "../../../public/assets/initialUser";
 import style from "../../../style/Sorting/bottomSheetCollaborator.module.css";
@@ -9,11 +8,22 @@ import style from "../../../style/Sorting/bottomSheetCollaborator.module.css";
 interface Props {
   open?: boolean;
   handleClose?: () => void;
+  handleSaveClose?: () => void;
+  onAddCollaborator?: (collaborator: any) => void;
+  onRemoveCollaborator?: (collaborator: any) => void;
+  selectedCollaborators: any[];
 }
-
-const BottomSheetCollaborators: React.FC<Props> = ({ handleClose, open }) => {
+const BottomSheetCollaborators: React.FC<Props> = ({
+  handleClose,
+  open,
+  handleSaveClose,
+  onAddCollaborator,
+  onRemoveCollaborator,
+  selectedCollaborators,
+}) => {
   const [searchText, setSearchText] = useState("");
   const [filteredUsers, setFilteredUsers] = useState(initialUsers);
+
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const text = e.target.value;
     setSearchText(text);
@@ -25,7 +35,15 @@ const BottomSheetCollaborators: React.FC<Props> = ({ handleClose, open }) => {
     );
     setFilteredUsers(filtered);
   };
-  const handleClickIcon = () => {};
+
+  const handleClickIcon = (selectedCollaborator: any, actionType: string) => {
+    if (actionType === "add") {
+      onAddCollaborator && onAddCollaborator(selectedCollaborator);
+    } else if (actionType === "remove") {
+      onRemoveCollaborator && onRemoveCollaborator(selectedCollaborator);
+    }
+  };
+
   return (
     <>
       <Drawer
@@ -55,7 +73,9 @@ const BottomSheetCollaborators: React.FC<Props> = ({ handleClose, open }) => {
               />
             }
           />
-          {/* <h2 className={style.currentHeading}>Current Collaborators</h2> */}
+          {selectedCollaborators.length > 0 && (
+            <h2 className={style.currentHeading}>Current Collaborators</h2>
+          )}
           {filteredUsers.map((item, index) => (
             <Collaborators
               item={item}
@@ -63,6 +83,11 @@ const BottomSheetCollaborators: React.FC<Props> = ({ handleClose, open }) => {
               onClickIcon={handleClickIcon}
             />
           ))}
+          <Button
+            className={style.saveBtn}
+            onClick={handleSaveClose}>
+            Save
+          </Button>
         </Form>
       </Drawer>
     </>
