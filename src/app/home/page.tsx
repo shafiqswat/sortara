@@ -13,6 +13,8 @@ import SortListContext from "@/context/SortListContext";
 import SearchContext from "@/context/SearchContext";
 import { usePathname, useRouter } from "next/navigation";
 import { Button, Input, Upload } from "antd";
+import SortingPopup from "@/components/Sorting/sortingpopup";
+import FormFinishContext from "@/context/FormFinishContext";
 
 const Home: React.FC = () => {
   const [isCollapseActive, setIsCollapseActive] = useState<boolean>(false);
@@ -65,6 +67,7 @@ const Home: React.FC = () => {
         <SearchContext.Provider value={{ handleSearchClick }}>
           <div className={style.container}>
             <div className={style.sortListItem}>
+              {/* <SortingPopup />  show this when the form is submit successfully */}
               <SortMessage
                 btnText='confirm'
                 messageText='Are you sure? Going back will remove progress. '

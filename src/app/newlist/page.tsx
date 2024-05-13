@@ -8,14 +8,17 @@ import { useRouter } from "next/navigation";
 import NewListCrud from "@/components/Sorting/newListCrud";
 import BottomSheetDrawer from "@/components/Sorting/bottomSheet";
 import { Button, Form } from "antd";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import BottomSheetCollaborators from "@/components/Sorting/bottomSheetCollaborators";
+import FormFinishContext from "../../context/FormFinishContext";
+
 export default function NewList() {
   const [selectedPrivacy, setSelectedPrivacy] = useState<string>("");
   const [selectedCollaborators, setSelectedCollaborators] = useState<any[]>([]);
   const [showSpan, setShowSpan] = useState<string>("");
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [open, setOpen] = useState(false);
+  const [nested, setNested] = useState(false);
 
   const handleAddCollaborator = (collaborator: any) => {
     setSelectedCollaborators([...selectedCollaborators, collaborator]);
@@ -50,6 +53,7 @@ export default function NewList() {
     }
     setDrawerOpen(false);
   };
+  const handleFinish = () => {};
   return (
     <div className={style.container}>
       <div className={style.contentContainer}>
@@ -67,7 +71,9 @@ export default function NewList() {
           />
           <h1 className={style.createHeading}>Create a new list</h1>
         </div>
-        <Form autoComplete='off'>
+        <Form
+          autoComplete='off'
+          onFinish={handleFinish}>
           <NewListInput
             labelText='List name'
             showCharacterCount={true}
@@ -120,8 +126,18 @@ export default function NewList() {
             paraText='Embed a nested list inside of this list'
             iconPath='images/crudAdd.svg'
             alt='editIcon'
-            handleEditClick={() => setDrawerOpen(true)}
+            handleEditClick={() => setNested(!nested)}
           />
+          {nested && (
+            <>
+              <NewListInput placeholderText='Enter a title for your nested list...' />
+              <p
+                className={style.EditPara}
+                onClick={() => setNested(!nested)}>
+                Remove
+              </p>
+            </>
+          )}
           <div className={style.btnContainer}>
             <Button
               className={style.saveBtn}
