@@ -1,167 +1,87 @@
 /** @format */
-
 "use client";
-import NewListInput from "@/components/Sorting/newListInput";
+import YourListIcon from "@/components/Sorting/yourListIcon";
+import React, { useState } from "react";
 import style from "../../../style/Pages/newList.module.css";
-import collaboratorStyle from "../../../style/Sorting/Collaborators.module.css";
-import { useRouter } from "next/navigation";
-import NewListCrud from "@/components/Sorting/newListCrud";
-import BottomSheetDrawer from "@/components/Sorting/bottomSheet";
-import { Button, Form } from "antd";
-import { useContext, useState } from "react";
-import BottomSheetCollaborators from "@/components/Sorting/bottomSheetCollaborators";
-import FormFinishContext from "../../context/FormFinishContext";
+import SortListCollapse from "@/components/Sorting/SortListCollapse";
+import SortListItemInput from "@/components/Sorting/SortListItemInput";
+function NewList() {
+  const [isCollapseActive, setIsCollapseActive] = useState<boolean>(false);
+  const [removeItem, setRemoveItem] = useState(true);
+  const handleCollapseChange = (isActive: boolean) => {
+    setIsCollapseActive(isActive);
+  };
+  const handleSortButtonClick = () => {
+    setRemoveItem(!removeItem);
+  };
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
 
-export default function NewList() {
-  const [selectedPrivacy, setSelectedPrivacy] = useState<string>("");
-  const [selectedCollaborators, setSelectedCollaborators] = useState<any[]>([]);
-  const [showSpan, setShowSpan] = useState<string>("");
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [nested, setNested] = useState(false);
+  const [image, setImage] = useState("/images/addItemsButton.svg");
 
-  const handleAddCollaborator = (collaborator: any) => {
-    setSelectedCollaborators([...selectedCollaborators, collaborator]);
-  };
-
-  const handleRemoveCollaborator = (collaborator: any) => {
-    setSelectedCollaborators(
-      selectedCollaborators.filter((c) => c.id !== collaborator.id)
-    );
-  };
-  const handleDrawerClose = () => {
-    setDrawerOpen(false);
-  };
-  const router = useRouter();
-  const handleExit = () => {
-    router.push("/home");
-  };
-
-  const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedPrivacy(e.target.value);
-    setShowSpan("");
-  };
-  const handleSave = () => {
-    if (!selectedPrivacy) {
-      alert("Please select a privacy option before saving.");
-      return;
-    }
-    if (selectedPrivacy === "public") {
-      setShowSpan("Public");
+  const handleDropDown = () => {
+    setIsDropDownOpen(!isDropDownOpen);
+    if (isDropDownOpen) {
+      setImage("/images/addItemsButton.svg");
     } else {
-      setShowSpan("Private");
+      setImage("/images/cross.svg");
     }
-    setDrawerOpen(false);
   };
-  const handleFinish = () => {};
   return (
-    <div className={style.container}>
-      <div className={style.contentContainer}>
-        <div className='d-flex justify-content-between align-item-center w-75'>
-          <img
-            src='/images/newListLogo.svg'
-            alt='newListLogo'
-            className={style.logo}
+    <>
+      <div className={style.container}>
+        <div className='w-25 m-auto'>
+          <YourListIcon
+            selfCareHeading='Ideas for Dad’s birthday'
+            publicText='Public'
           />
-          <img
-            src='/images/ChevronLeft.svg'
-            alt='leftArrow'
-            onClick={handleExit}
-            className={style.exitImage}
-          />
-          <h1 className={style.createHeading}>Create a new list</h1>
-        </div>
-        <Form
-          autoComplete='off'
-          onFinish={handleFinish}>
-          <NewListInput
-            labelText='List name'
-            showCharacterCount={true}
-            placeholderText='Enter a name for your new list...'
-          />
+          <p className={style.para}>Let’s surprise him for his 59th bday!</p>
           <div>
-            <NewListInput
-              labelText='Description'
-              placeholderText='Type a description here...'
+            <img
+              src='images/firstCollaborator.svg'
+              className='ms-3'
+              alt=''
+            />
+            <img
+              src='images/firstCollaborator.svg'
+              alt=''
+              className='ms-2'
             />
           </div>
-          <NewListCrud
-            headingText='Privacy'
-            paraText='Edit who can view your list'
-            iconPath='images/edit.svg'
-            alt='editIcon'
-            handleEditClick={() => setDrawerOpen(true)}
-            showSpan={showSpan}
-          />
-          <NewListCrud
-            headingText='Collaborators'
-            paraText='Add sorters from your community'
-            iconPath='images/crudAdd.svg'
-            alt='add icon'
-            handleEditClick={() => setOpen(true)}
-          />
-          {selectedCollaborators.map((collaborator, index) => (
-            <div
-              key={index}
-              className='d-flex justify-content-between align-items-center'>
-              <div className={collaboratorStyle.userParent}>
-                <img
-                  src={collaborator.imagePath}
-                  alt={`Collaborator ${index}`}
-                />
-                <div className='ms-3'>
-                  <h2 className={collaboratorStyle.username}>
-                    {collaborator.name}
-                  </h2>
-                  <p className={collaboratorStyle.userPara}>
-                    {collaborator.username}
-                  </p>
-                </div>
-              </div>
-              <p className={style.EditPara}>Edit permissions</p>
-            </div>
-          ))}
-          <NewListCrud
-            headingText='Nested List'
-            paraText='Embed a nested list inside of this list'
-            iconPath='images/crudAdd.svg'
-            alt='editIcon'
-            handleEditClick={() => setNested(!nested)}
-          />
-          {nested && (
-            <>
-              <NewListInput placeholderText='Enter a title for your nested list...' />
-              <p
-                className={style.EditPara}
-                onClick={() => setNested(!nested)}>
-                Remove
-              </p>
-            </>
-          )}
-          <div className={style.btnContainer}>
-            <Button
-              className={style.saveBtn}
-              htmlType='submit'>
-              Save
-            </Button>
+          <div className={style.reactionContainer}>
+            <img
+              src='/images/heartBlue.svg'
+              alt='heartIcon'
+              className=' ms-1 me-2'
+            />
+            <p>Share a reaction</p>
+            <img
+              src='/images/chatBlue.svg'
+              alt='chatIcon'
+              className='me-2 ms-4 '
+            />
+            <p>0 Comments</p>
           </div>
-        </Form>
-        <BottomSheetDrawer
-          open={drawerOpen}
-          onClose={handleDrawerClose}
-          handleSave={handleSave}
-          handleClick={() => setDrawerOpen(false)}
-          handleRadio={handleRadioChange}
-        />
-        <BottomSheetCollaborators
-          handleClose={() => setOpen(false)}
-          open={open}
-          handleSaveClose={() => setOpen(false)}
-          onAddCollaborator={handleAddCollaborator}
-          onRemoveCollaborator={handleRemoveCollaborator}
-          selectedCollaborators={selectedCollaborators}
-        />
+          <div className='px-1 mt-4'>
+            <SortListCollapse
+              onCollapseChange={handleCollapseChange}
+              handleSortButtonClick={handleSortButtonClick}
+              sortText='Destination areas for the surprise party'
+            />
+          </div>
+          <div className={style.InputContainer}>
+            <SortListItemInput
+              buttonImagePath={image}
+              inputImagePath='/images/sortListSearch.svg'
+              placeholderText='Search lists, items, etc...'
+              askImagePath='/images/SuggestItem.png'
+              askParaText='Ask AI to help with your search'
+              handleDropDown={handleDropDown}
+            />
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
+
+export default NewList;

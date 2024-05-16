@@ -1,5 +1,4 @@
 /** @format */
-
 import { useState } from "react";
 import { Collapse } from "antd";
 import style from "../../../style/Sorting/sortListCollapse.module.css";
@@ -8,22 +7,28 @@ import items from "../../../public/assets/sortListItem";
 import sortListItem2 from "../../../public/assets/sortListItem2";
 import SortButton from "./SortButton";
 import SortListContext from "@/context/SortListContext";
+import SearchContext from "@/context/SearchContext";
 
 interface SortListCollapseProps {
   onCollapseChange: (isActive: boolean) => void;
   handleSortButtonClick: () => void;
+  sortText: string;
+  paraText?: string;
 }
 
 export default function SortListCollapse({
   onCollapseChange,
   handleSortButtonClick,
+  sortText,
+  paraText,
 }: SortListCollapseProps) {
   const [isCollapseActive, setIsCollapseActive] = useState(false);
   const [isCollapseActivePara, setIsCollapseActivePara] = useState(false);
   const [isRemoveItem, setIsRemoveItem] = useState(false);
   const [isSortButtonVisible, setIsSortButtonVisible] = useState(true);
   const [sortItemsVisible, setSortItemsVisible] = useState(true);
-
+  const [itemsState, setItemsState] = useState(items);
+  const [draggedItem, setDraggedItem] = useState<number | null>(null);
   const handleCollapseChange = (keys: string | string[]) => {
     setIsCollapseActive(!!keys.length);
     onCollapseChange(!!keys.length);
@@ -37,10 +42,41 @@ export default function SortListCollapse({
     setSortItemsVisible(!sortItemsVisible);
     handleSortButtonClick();
   };
-  const handleAddClick = () => {};
+
+  const handleAddClick = () => {
+    alert("abcd");
+  };
   const handleCancel = () => {};
   const handleRefresh = () => {};
   const handleRemove = () => {};
+  const handleDragStart = (e: React.DragEvent<HTMLDivElement>, id: number) => {
+    setDraggedItem(id);
+    e.dataTransfer.effectAllowed = "move";
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>, id: number) => {
+    e.preventDefault();
+
+    if (draggedItem === null) return;
+
+    const draggedIndex = itemsState.findIndex(
+      (item) => item.id === draggedItem
+    );
+    const targetIndex = itemsState.findIndex((item) => item.id === id);
+
+    const newItems = [...itemsState];
+    const [removed] = newItems.splice(draggedIndex, 1);
+    newItems.splice(targetIndex, 0, removed);
+
+    setItemsState(newItems);
+    setDraggedItem(null);
+  };
+
   const customIcon = (
     <img
       src='/images/arrowDown.svg'
@@ -59,10 +95,14 @@ export default function SortListCollapse({
     <>
       {sortItemsVisible && (
         <>
-          {items.map((item, index) => (
+          {itemsState.map((item, index) => (
             <SortListItem
               key={index}
               item={item}
+              onDragStart={handleDragStart}
+              onDragOver={handleDragOver}
+              onDrop={handleDrop}
+              // handleModal={handleModal}
             />
           ))}
         </>
@@ -73,6 +113,10 @@ export default function SortListCollapse({
             <SortListItem
               key={index}
               item={item}
+              onDragStart={handleDragStart}
+              onDragOver={handleDragOver}
+              onDrop={handleDrop}
+              // handleModal={handleModal}
             />
           ))}
         </>
@@ -106,7 +150,7 @@ export default function SortListCollapse({
     </>
   );
 
-  const para = <p className={style.itemPara}>4 items</p>;
+  const para = <p className={style.itemPara}>{paraText}</p>;
 
   return (
     <SortListContext.Provider
@@ -126,7 +170,7 @@ export default function SortListCollapse({
               <>
                 {!isCollapseActive && (
                   <>
-                    <h2 className={style.collapseLabel}>Sort this later</h2>
+                    <h2 className={style.collapseLabel}>{sortText}</h2>
                     {para}
                   </>
                 )}

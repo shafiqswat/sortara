@@ -1,5 +1,5 @@
 /** @format */
-"use client";
+
 import React, { useState } from "react";
 import { Card } from "antd";
 import style from "../../../style/Sorting/SortListItem.module.css";
@@ -7,6 +7,7 @@ import SortListProcessing from "./SortListProcessing";
 
 interface SortListItemProps {
   item: {
+    id: number;
     sortListItemImagePath: string;
     sortListItemHeading: string;
     firstPara?: string;
@@ -28,21 +29,40 @@ interface SortListItemProps {
     dollarParaText?: string;
     processingHeadingText?: string;
   };
+  handleModal?: () => void;
+  onDragStart: (e: React.DragEvent<HTMLDivElement>, id: number) => void;
+  onDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
+  onDrop: (e: React.DragEvent<HTMLDivElement>, id: number) => void;
 }
 
-const SortListItem: React.FC<SortListItemProps> = ({ item }) => {
+// const handleClick = () => {
+//   alert("hello");
+// };
+const SortListItem: React.FC<SortListItemProps> = ({
+  item,
+  onDragStart,
+  onDragOver,
+  onDrop,
+  handleModal,
+}) => {
   const [count, setCount] = useState(0);
 
   const handleLike = () => {
     setCount(count + 1);
   };
+
   return (
     <Card
+      onClick={handleModal}
       className={style.cardContainer}
       style={{
         backgroundColor: item.cardBackground,
         marginTop: item.marginTop,
-      }}>
+      }}
+      draggable
+      onDragStart={(e) => onDragStart(e, item.id)}
+      onDragOver={(e) => onDragOver(e)}
+      onDrop={(e) => onDrop(e, item.id)}>
       <div>
         {item.processingHeadingText && (
           <SortListProcessing headingText={item.processingHeadingText} />
@@ -75,7 +95,6 @@ const SortListItem: React.FC<SortListItemProps> = ({ item }) => {
             }}>
             <img
               src={item.sortParaImagePath}
-              // alt=''
               className='me-1'
             />
             {item.firstPara}
@@ -84,17 +103,14 @@ const SortListItem: React.FC<SortListItemProps> = ({ item }) => {
             <img
               src={item.restartImagePath}
               className='ms-2'
-              // alt=''
             />
             <img
               src={item.checkImagePath}
               className='ms-3'
-              // alt=''
             />
             <img
               src={item.exitImagePath}
               className='ms-2'
-              // alt=''
             />
           </div>
           <p
@@ -107,23 +123,20 @@ const SortListItem: React.FC<SortListItemProps> = ({ item }) => {
             style={{ width: item.width }}>
             <img
               src={item.HeartImagePath}
-              // alt='heart'
               className={style.reviewIcon}
               onClick={handleLike}
             />
-            {/* <p className={style.heartCount}>{count}</p> */}
+            <p className={style.heartCount}>{count}</p>
             <img
               src={item.chatImagePath}
-              // alt='chat'
               className={style.reviewIcon}
               id={style.chat}
             />
             <p className={style.heartCount}>{item.chatCount}</p>
             <img
-              src={item.shareImagePath}
-              // alt='share'
               className='ms-auto'
               id={style.share}
+              src={item.shareImagePath}
             />
           </div>
         </div>

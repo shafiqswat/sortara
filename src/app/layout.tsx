@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../style/Common/Customization.css";
 import Header from "@/components/Header";
 import { usePathname } from "next/navigation";
+import SearchContext from "@/context/SearchContext";
 // import { Provider } from "react-redux";
 // import store from "@/redux/store";
 
@@ -50,6 +51,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
       </head>
       <body className={style.body}>
         {/* <Provider store={store}> */}
+
         <div>
           {showHeader && <Header currentPath={currentPath} />}
           <main>{children}</main>

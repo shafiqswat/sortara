@@ -23,7 +23,8 @@ const BottomSheetCollaborators: React.FC<Props> = ({
 }) => {
   const [searchText, setSearchText] = useState("");
   const [filteredUsers, setFilteredUsers] = useState(initialUsers);
-
+  const [show, setShow] = useState(false);
+  // const [arr, setArr] = useState<any[]>([]);
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const text = e.target.value;
     setSearchText(text);

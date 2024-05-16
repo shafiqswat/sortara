@@ -1,18 +1,10 @@
 /** @format */
-/* 
-:root {
-  --rsbs-backdrop-bg: rgba(0, 0, 0, 0.6);
-  --rsbs-bg: #fff;
-  --rsbs-handle-bg: hsla(0, 0%, 0%, 0.14);
-  --rsbs-max-w: auto;
-  --rsbs-ml: env(safe-area-inset-left);
-  --rsbs-mr: env(safe-area-inset-right);
-  --rsbs-overlay-rounded: 16px;
-} */
+
 @font-face {
   font-family: "Recoleta";
   src: url(../../public/assets/Fonts/Recoleta-RegularDEMO.ttf);
 }
+
 .ant-drawer-content-wrapper {
   position: relative;
   width: 393px;

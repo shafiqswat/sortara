@@ -8,10 +8,11 @@ interface MessageProps {
   btnText?: string;
   children?: string;
   handleConfirmBtn?: () => void;
+  height?: string;
 }
 
 const SortMessage: React.ForwardRefRenderFunction<any, MessageProps> = (
-  { messageText, btnText, children },
+  { messageText, btnText, children, height },
   ref
 ) => {
   const [messageApi, contextHolder] = message.useMessage();

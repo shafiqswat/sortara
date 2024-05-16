@@ -35,3 +35,7 @@
 .clickedContainer {
   background-color: #f2f2f7;
 }
+.parentContainer {
+  border-bottom: 1px solid #d0d0d0;
+  padding-bottom: 1.5em;
+}

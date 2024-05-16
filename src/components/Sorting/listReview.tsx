@@ -2,9 +2,9 @@
 import { useContext } from "react";
 import { Button } from "antd";
 import style from "../../../style/Sorting/ListReview.module.css";
-import SortListContext from "@/context/SortListContext";
+import SearchContext from "@/context/SearchContext";
 export default function ListReview() {
-  const { handleCancel } = useContext(SortListContext);
+  const { handleCancel } = useContext(SearchContext);
   return (
     <>
       <div className={style.iconContainer}>

@@ -1,14 +1,14 @@
 /** @format */
 import { useContext } from "react";
 import style from "../../../style/Sorting/SortListProcessing.module.css";
-import SortListContext from "@/context/SortListContext";
+import SearchContext from "@/context/SearchContext";
 interface SortListProps {
   headingText?: string;
 }
 
 const SortListProcessing: React.FC<SortListProps> = ({ headingText }) => {
   const { handleAddClick, handleRefresh, handleRemove } =
-    useContext(SortListContext);
+    useContext(SearchContext);
   return (
     <>
       <div className={style.container}>

@@ -1,0 +1,19 @@
+/** @format */
+.drawer {
+  position: relative;
+  border: 3px solid red;
+  max-width: 393px;
+}
+.indicator {
+  position: absolute;
+  top: 0.2em;
+  left: 45%;
+  /* margin-top: -1.5em; */
+  text-align: center;
+}
+.indicator img {
+  cursor: pointer;
+}
+.delete {
+  margin-top: -2em;
+}

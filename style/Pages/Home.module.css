@@ -1,7 +1,7 @@
 /** @format */
 
 .container {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   background-color: #f2f2f7;
   padding-bottom: 2rem;
@@ -58,4 +58,7 @@
 }
 .InputsContainer {
   position: relative;
+}
+.mostRecent {
+  cursor: pointer;
 }

@@ -1,5 +1,6 @@
 /** @format */
 .container {
+  width: 335px;
   display: flex;
   align-items: center;
   justify-content: space-between;

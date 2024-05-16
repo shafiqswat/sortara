@@ -2,7 +2,7 @@
 
 .cardContainer {
   /* background-color: transparent; */
-  width: 360px;
+  max-width: 360px;
   border: none;
   margin: 0;
   margin: auto;

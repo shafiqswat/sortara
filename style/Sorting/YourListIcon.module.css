@@ -14,13 +14,17 @@
 .imageContainer {
   cursor: pointer;
 }
-/* .suggestOutline {
-  width: 28px;
-  height: 28px;
-} */
-/* .suggestOutline {
-  fill: red !important;
-} */
+
 .suggestOutline:active {
   background-color: #cee542;
+}
+
+.public {
+  margin-right: 1em;
+  background-color: #cee542;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 0.2em;
 }

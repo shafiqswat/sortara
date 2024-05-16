@@ -8,7 +8,6 @@ import style from "../../../style/Pages/myList.module.css";
 import WalkthroughSortButton from "@/components/Walkthrough/WalkthroughSortButton";
 import SparkleContext from "@/context/sparkleContext";
 import { Button } from "antd";
-// import yourListItems from "../../../public/assets/yourList";
 import SortListItem from "@/components/Sorting/SortListItem";
 import suggestionItems from "../../../public/assets/suggestionItem";
 import ListReview from "@/components/Sorting/listReview";
@@ -21,6 +20,8 @@ export default function MyList() {
   const [isLoading, setIsLoading] = useState(false);
   const [suggestionItem, setSuggestionItem] = useState(false);
   const [buttonActive, setButtonActive] = useState(true);
+  const [items, setItems] = useState(suggestionItems);
+  const [draggedItem, setDraggedItem] = useState<number | null>(null);
 
   const handleSparkle = () => {
     setSparkleActive(!sparkleActive);
@@ -36,13 +37,42 @@ export default function MyList() {
       setButtonActive(!buttonActive);
     }, 4000);
   };
+
   const handleAddClick = () => {};
   const sortMessageRefCancel = useRef<any>();
   const handleCancel = () => {
+    alert("ksdnf");
     sortMessageRefCancel.current.handleModal();
   };
   const handleRefresh = () => {};
   const handleRemove = () => {};
+
+  const handleDragStart = (e: React.DragEvent<HTMLDivElement>, id: number) => {
+    setDraggedItem(id);
+    e.dataTransfer.effectAllowed = "move";
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>, id: number) => {
+    e.preventDefault();
+
+    if (draggedItem === null) return;
+
+    const draggedIndex = items.findIndex((item) => item.id === draggedItem);
+    const targetIndex = items.findIndex((item) => item.id === id);
+
+    const newItems = [...items];
+    const [removed] = newItems.splice(draggedIndex, 1);
+    newItems.splice(targetIndex, 0, removed);
+
+    setItems(newItems);
+    setDraggedItem(null);
+  };
+
   return (
     <SparkleContext.Provider value={{ handleSparkle }}>
       <SortListContext.Provider
@@ -59,7 +89,7 @@ export default function MyList() {
               messageText='Refreshed “Aromatherapy diffuser with essential oils” suggestion.'
               ref={sortMessageRefCancel}
             />
-            <YourListIcon />
+            <YourListIcon selfCareHeading='Luxe Self-Care Retreat Essentials' />
             {!buttonActive && (
               <div className={style.tryParaContainer}>
                 <p>Try Again? Let's Sort This!</p>
@@ -69,10 +99,13 @@ export default function MyList() {
             <YourList />
             {suggestionItem && (
               <div className='m-3'>
-                {suggestionItems.map((item, index) => (
+                {items.map((item, index) => (
                   <SortListItem
                     item={item}
                     key={index}
+                    onDragStart={handleDragStart}
+                    onDragOver={handleDragOver}
+                    onDrop={handleDrop}
                   />
                 ))}
               </div>

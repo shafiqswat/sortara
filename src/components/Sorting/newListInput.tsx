@@ -8,6 +8,7 @@ interface NewListProps {
   placeholderText?: string;
   characterLimit?: number;
   showCharacterCount?: boolean;
+  handleOnChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function NewListInput({
@@ -15,6 +16,7 @@ export default function NewListInput({
   placeholderText,
   showCharacterCount,
   characterLimit = 56,
+  handleOnChange,
 }: NewListProps) {
   const [remainingCharacters, setRemainingCharacters] =
     useState(characterLimit);
@@ -24,6 +26,7 @@ export default function NewListInput({
     const inputLength = inputText.length;
     const charactersLeft = characterLimit - inputLength;
     setRemainingCharacters(charactersLeft);
+    handleOnChange(e);
   };
 
   return (

@@ -16,32 +16,41 @@ interface Props {
 const Collaborators: React.FC<Props> = ({ item, onClickIcon }) => {
   const [isAdded, setIsAdded] = useState(false);
 
-  const handleIconClick = (actionType: string) => {
+  const handleIconClick = () => {
     setIsAdded(!isAdded);
+    const actionType = isAdded ? "remove" : "add";
     onClickIcon(item, actionType);
   };
 
   return (
-    <div
-      className={`${style.container} ${isAdded ? style.clickedContainer : ""}`}>
-      <div className={style.userParent}>
-        <img
-          src={item.imagePath}
-          alt='collaborators'
-          className={style.userImage}
-        />
-        <div>
-          <h2 className={style.username}>{item.name}</h2>
-          <p className={style.userPara}>{item.username}</p>
+    <>
+      <div className={`${style} ${isAdded ? style.parentContainer : ""}`}>
+        <div
+          className={`${style.container} ${
+            isAdded ? style.clickedContainer : ""
+          }`}>
+          <div className={style.userParent}>
+            <img
+              src={item.imagePath}
+              alt='collaborators'
+              className={style.userImage}
+            />
+            <div>
+              <h2 className={style.username}>{item.name}</h2>
+              <p className={style.userPara}>{item.username}</p>
+            </div>
+          </div>
+          <img
+            src={
+              isAdded ? "/images/newListCross.svg" : "/images/ControlPoint.svg"
+            }
+            className={style.iconPath}
+            alt='icon'
+            onClick={handleIconClick}
+          />
         </div>
       </div>
-      <img
-        src={isAdded ? "/images/newListCross.svg" : "/images/ControlPoint.svg"}
-        className={style.iconPath}
-        alt='icon'
-        onClick={() => handleIconClick(isAdded ? "remove" : "add")}
-      />
-    </div>
+    </>
   );
 };
 

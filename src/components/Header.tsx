@@ -4,12 +4,15 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import style from "../../style/Common/Header.module.css";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface HeaderProps {
   currentPath: string;
 }
-
 const Header: React.FC<HeaderProps> = ({ currentPath }) => {
+  const router = useRouter();
+  const handleRoute = () => router.push("/home");
+
   return (
     <Navbar
       // bg='transparent'
@@ -21,6 +24,7 @@ const Header: React.FC<HeaderProps> = ({ currentPath }) => {
           <img
             src='/images/lists.svg'
             alt='logoImage'
+            onClick={handleRoute}
           />
         </Link>
         <Nav
@@ -36,7 +40,13 @@ const Header: React.FC<HeaderProps> = ({ currentPath }) => {
           </Link>
           <Link
             href='/home'
-            className={currentPath === "/home" ? style.active : ""}>
+            className={
+              currentPath === "/home" ||
+              currentPath === "/nestedlist" ||
+              currentPath === "mylist"
+                ? style.active
+                : ""
+            }>
             <img
               src='/images/listNav.svg'
               alt='ListNavImage'
