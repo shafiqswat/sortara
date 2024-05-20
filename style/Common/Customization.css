@@ -10,6 +10,7 @@
   width: 393px;
   border-radius: 14px !important;
   margin: auto;
+  box-shadow: none;
 }
 .ant-drawer-content {
   border-radius: 14px 14px 0 0;

@@ -19,7 +19,7 @@ const Home: React.FC = () => {
   const [isCollapseActive, setIsCollapseActive] = useState<boolean>(false);
   const [removeItem, setRemoveItem] = useState(true);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-  const [render, setRender] = useState(false);
+  // const [render, setRender] = useState(false);
   const [openModel, setOpenModal] = useState(false);
 
   const handleCollapseChange = (isActive: boolean) => {
@@ -135,6 +135,9 @@ const Home: React.FC = () => {
               <img
                 src='/images/Edit.svg'
                 alt='edit'
+                onClick={() => {
+                  router.push("/editlist");
+                }}
               />
             </div>
           )}

@@ -1,0 +1,66 @@
+/** @format */
+
+.customDrawer {
+  position: relative;
+  max-width: 393px;
+}
+.indicator {
+  position: absolute;
+  top: 0.2em;
+  left: 45%;
+  text-align: center;
+}
+.indicator img {
+  cursor: pointer;
+}
+.retry {
+  border: none;
+  background: none;
+  color: #6000da;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  position: absolute;
+  top: 2.5em;
+  right: 20px;
+}
+.retailPara {
+  margin-top: -2em;
+  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+}
+.retailHeading {
+  font-size: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+}
+.iconContainer img {
+  cursor: pointer;
+}
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5em;
+}
+.cancelBtn {
+  border-radius: 14px;
+  width: 167px;
+  height: 48px;
+  border: 2px solid #6000da;
+  color: #6000da;
+  font-size: 16px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+}
+.acceptBtn {
+  width: 167px;
+  height: 48px;
+  border: none;
+  border-radius: 14px;
+  background-color: #6000da;
+  font-size: 16px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  color: white;
+}

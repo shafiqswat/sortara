@@ -1,5 +1,4 @@
 /** @format */
-
 import React, { useState } from "react";
 import { Card } from "antd";
 import style from "../../../style/Sorting/SortListItem.module.css";
@@ -28,22 +27,22 @@ interface SortListItemProps {
     sortParaFontWeight?: string;
     dollarParaText?: string;
     processingHeadingText?: string;
+    marginBottom?: string;
   };
   handleModal?: () => void;
   onDragStart: (e: React.DragEvent<HTMLDivElement>, id: number) => void;
   onDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
   onDrop: (e: React.DragEvent<HTMLDivElement>, id: number) => void;
+  cardBorder?: string;
 }
 
-// const handleClick = () => {
-//   alert("hello");
-// };
 const SortListItem: React.FC<SortListItemProps> = ({
   item,
   onDragStart,
   onDragOver,
   onDrop,
   handleModal,
+  cardBorder,
 }) => {
   const [count, setCount] = useState(0);
 
@@ -57,7 +56,9 @@ const SortListItem: React.FC<SortListItemProps> = ({
       className={style.cardContainer}
       style={{
         backgroundColor: item.cardBackground,
+        marginBottom: item.marginBottom,
         marginTop: item.marginTop,
+        border: cardBorder,
       }}
       draggable
       onDragStart={(e) => onDragStart(e, item.id)}

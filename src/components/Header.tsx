@@ -43,7 +43,8 @@ const Header: React.FC<HeaderProps> = ({ currentPath }) => {
             className={
               currentPath === "/home" ||
               currentPath === "/nestedlist" ||
-              currentPath === "mylist"
+              currentPath === "mylist" ||
+              currentPath === "/editlist"
                 ? style.active
                 : ""
             }>

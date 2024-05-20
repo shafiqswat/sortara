@@ -1,7 +1,4 @@
-/**
- * @format
- * @type {import('next').NextConfig}
- */
+/** @format */
 
 const nextConfig = {};
 

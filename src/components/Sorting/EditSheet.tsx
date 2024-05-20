@@ -1,17 +1,30 @@
 /** @format */
-
-import React, { useState } from "react";
-import style from "../../../style/Sorting/EditSheet.module.css";
-import { Button, Drawer } from "antd";
+import React from "react";
+import { Drawer } from "antd";
 import EditContent from "./EditContent";
-interface props {
+import style from "../../../style/Sorting/EditSheet.module.css";
+
+interface Props {
   handleIndicator?: () => void;
   open?: boolean;
+  handleDelete?: () => void;
+  handleCopy?: () => void;
+  handleMove?: () => void;
+  handleMore?: () => void;
 }
-const EditSheet = ({ handleIndicator, open }: props) => {
+
+const EditSheet = ({
+  handleIndicator,
+  open,
+  handleDelete,
+  handleCopy,
+  handleMove,
+  handleMore,
+}: Props) => {
   return (
-    <>
+    <div className='editList'>
       <Drawer
+        className={style.customDrawer}
         headerStyle={{ borderBottom: "0" }}
         title='Edit'
         placement='bottom'
@@ -22,24 +35,37 @@ const EditSheet = ({ handleIndicator, open }: props) => {
             <img
               src='images/BottomIndicator.svg'
               onClick={handleIndicator}
+              alt='Indicator'
             />
           </div>
           <div className={style.delete}>
-            <EditContent headingText='Delete' />
+            <EditContent
+              headingText='Delete'
+              handleClick={handleDelete}
+            />
           </div>
-          <EditContent headingText='Copy to another list' />
-          <EditContent headingText='Move to new list' />
+          <EditContent
+            headingText='Copy to another list'
+            handleClick={handleCopy}
+          />
+          <EditContent
+            headingText='Move to new list'
+            handleClick={handleMove}
+          />
           <EditContent
             headingText='Sort More'
             iconPath='images/sortmore.svg'
+            handleClick={handleMore}
           />
           <EditContent
             headingText='Sort Less'
             iconPath='images/sortmore.svg'
+            handleClick={handleMore}
           />
         </div>
       </Drawer>
-    </>
+    </div>
   );
 };
+
 export default EditSheet;

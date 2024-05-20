@@ -6,9 +6,10 @@ import style from "../../../style/Sorting/EditContent.module.css";
 interface Props {
   headingText: string;
   iconPath?: string;
+  handleClick?: () => void;
 }
 
-function EditContent({ headingText, iconPath }: Props) {
+function EditContent({ headingText, iconPath, handleClick }: Props) {
   return (
     <div className='d-flex justify-content-between mb-4 mt-1 px-2'>
       <div className='d-flex '>
@@ -25,6 +26,7 @@ function EditContent({ headingText, iconPath }: Props) {
         src='/images/RightArrow.svg'
         alt='rightArrow'
         className={style.cursorPointer}
+        onClick={handleClick}
       />
     </div>
   );
